@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="HrDashboardTemplate" owl="1">
+
+        <div class="o_DiscussContainer h-100 d-flex flex-column">
+
+            <div class="o_action o_spreadsheet_dashboard_action o_field_highlight" >
+                <div class="o_control_panel" style="background-color:powderblue;">
+                    <div class="o_cp_top" >
+                        <div class="o_cp_top_left">
+                            <ol class="breadcrumb" style="background-color:powderblue;">
+                                
+                                <li class="breadcrumb-item active d-flex align-items-center">
+                                    <strong><span class="text-truncate" style="color: Black; font-size: 22px;">Dashboards</span></strong>
+                                    
+                                </li>
+                                
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="o_Discuss d-flex h-100 flex-grow-1" style="background-color:#faf6f0;">
+                <div name="root" class="o_DiscussSidebar d-flex flex-column overflow-auto o_Discuss_sidebar flex-shrink-0 h-100 pt-3 border-end"  style="background-color:#faecd9;">
+                    <center>
+                        <h2 style="margin-left: -87px;">
+                            <span class="o_DiscussSidebarCategory_titleText btn-sm p-0 text-uppercase fw-bolder" style="color: Black; font-size: 18px;">Companies</span>
+                        </h2>
+                        <t t-foreach="state.companies_list" t-as="company" t-key="company.id">
+                            <div style="margin:10px; !important;">
+                                <span style="cursor: pointer;" t-att-id="company.id" t-on-click="actionActiveCompany"><t t-esc="company.name" /></span>
+                            </div> 
+                        </t>
+                    </center>
+                    <hr class="o_DiscussSidebar_separator w-100 border-top">
+                    <hr class="o_DiscussSidebar_separator w-100 border-top">
+                </div>
+                
+            </div>
+        </div>
+        <div >
+            <div style="margin:15%; !important!" >
+                <!-- <center> -->
+
+                    <table style='margin-left: 50%; margin-right: auto;'>
+                        <!-- <tr> -->
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" t-on-click="actionRedirect" id="welcome">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-home fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Welcome On Board" title="Welcome On Board"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Welcome On Board</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Welcome On Board</div> -->
+                                </div>
+                            </th>
+
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" t-on-click="actionRedirect" id="documentation">
+                                   <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-book fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Documentation" title="Documentation"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Documentation</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Documentation</div> -->
+                                </div>
+                            </th>
+
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" t-on-click="actionRedirect" id="clock_in_out">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-clock-o fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Clock In Clock Out" title="Clock In Clock Out"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Clock In Clock Out</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Clock In Clock Out</div> -->
+                                </div>
+                            </th>
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" title="Leave" t-on-click="actionRedirect" id="leave_management">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-bed fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Leave Management" title="Leave Management"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Leave Management</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Leave Management</div> -->
+                                </div>
+                            </th>
+                    </table>
+                    <table class="center" style='margin-left: 50%; margin-right: auto; margin-top: 12px;'>
+
+                            <!-- ************************************************ -->
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" t-on-click="actionRedirect" id="policy">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-id-card fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Policy" title="Policy"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Policy</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Policy</div> -->
+                                </div>
+                            </th>
+
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" t-on-click="actionRedirect" id="reports">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-bar-chart fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Report" title="Report"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Reports</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Reports</div> -->
+                                </div>
+                            </th>
+
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" t-on-click="actionRedirect" id="payroll">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-money fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Payroll" title="Payroll"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Payroll</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Payroll Management</div> -->
+                                </div>
+                            </th>
+
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" t-on-click="actionRedirect" id="payslip">  
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-file fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Payslip" title="Payslip"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Payslip</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Payslip</div> -->
+                                </div>
+                            </th>
+                        
+                        <!-- </tr> -->
+
+                    </table>
+                    <table class="center" style='margin-left: 50%; margin-right: auto;'>                      
+
+                        <tr>
+                            
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" t-on-click="actionRedirect" id="exit">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-sign-out fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Exit Process" title="Exit Process"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Exit</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Exit Process</div> -->
+                                </div>
+                            </th>
+                        </tr>
+                    </table>
+                <!-- </center> -->
+            </div>
+        </div>
+                
+    </t>
+
+</templates>
+
+
+
+
+<!-- *******************************************************************8 -->
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="HrDashboardTemplate" owl="1">
+
+        <div class="o_DiscussContainer h-100 d-flex flex-column">
+
+            <div class="o_action o_spreadsheet_dashboard_action o_field_highlight">
+                <div class="o_control_panel">
+                    <div class="o_cp_top">
+                        <div class="o_cp_top_left">
+                            <ol class="breadcrumb">
+                                
+                                <li class="breadcrumb-item active d-flex align-items-center">
+                                    <span class="text-truncate">Dashboards</span>
+                                    
+                                </li>
+                                
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="o_Discuss d-flex h-100 flex-grow-1">
+                <div name="root" class="o_DiscussSidebar d-flex flex-column overflow-auto o_Discuss_sidebar flex-shrink-0 h-100 pt-3 border-end bg-light">
+                    <center>
+                        <h3>
+                            <span class="o_DiscussSidebarCategory_titleText btn-sm p-0 text-uppercase fw-bolder">Companies</span>
+                        </h3>
+                        <t t-foreach="state.companies_list" t-as="company" t-key="company.id">
+                            <div style="margin:10px; !important;">
+                                <span style="cursor: pointer;" t-att-id="company.id" t-on-click="actionActiveCompany"><t t-esc="company.name" /></span>
+                            </div> 
+                        </t>
+                    </center>
+                    <hr class="o_DiscussSidebar_separator w-100 border-top">
+                    <hr class="o_DiscussSidebar_separator w-100 border-top">
+                </div>
+                
+            </div>
+        </div>
+        <div >
+            <div style="margin:5%; !important!" >
+                <!-- <center> -->
+                    <table>
+                        <tr>
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" t-on-click="actionRedirect" id="welcome">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-home fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Welcome On Board" title="Welcome On Board"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Welcome On Board</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Welcome On Board</div> -->
+                                </div>
+                            </th>
+
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" id="documentation">
+                                   <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-book fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Documentation" title="Documentation"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Documentation</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Documentation</div> -->
+                                </div>
+                            </th>
+
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" id="clock_in_out">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-clock-o fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Clock In Clock Out" title="Clock In Clock Out"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Clock In Clock Out</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Clock In Clock Out</div> -->
+                                </div>
+                            </th>
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" title="Leave" id="leave_management">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-bed fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Leave Management" title="Leave Management"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Leave Management</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Leave Management</div> -->
+                                </div>
+                            </th>
+
+                            <!-- ************************************************ -->
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" id="policy">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-id-card fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Policy" title="Policy"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Policy</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Policy</div> -->
+                                </div>
+                            </th>
+
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" id="reports">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-bar-chart fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Report" title="Report"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Reports</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Reports</div> -->
+                                </div>
+                            </th>
+
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" id="payroll">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-money fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Payroll" title="Payroll"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Payroll</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Payroll Management</div> -->
+                                </div>
+                            </th>
+
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" id="payslip">  
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-file fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Payslip" title="Payslip"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Payslip</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Payslip</div> -->
+                                </div>
+                            </th>
+                        
+                        </tr>
+
+                        
+
+                        <tr>
+                            
+                            <th>
+                                <div style="margin: 20px; cursor: pointer;" id="exit">
+                                    <div style="width:80px; height:80px; !important;">
+                                    <i class="fa fa-sign-out fa-5x m-3 mx-auto d-block" aria-hidden="true" aria-label="Exit Process" title="Exit Process"></i>
+                                    <center><span style="margin-top:2px; width:80px; text-align:center;">Exit</span></center>
+                                    </div>
+                                    <!-- <div style="margin-top:5px; width:80px; text-align:center;">Exit Process</div> -->
+                                </div>
+                            </th>
+                        </tr>
+                    </table>
+                <!-- </center> -->
+            </div>
+        </div>
+                
+    </t>
+
+</templates> -->
